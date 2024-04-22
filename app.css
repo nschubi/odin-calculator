@@ -8,6 +8,18 @@ body{
     align-items: center;
 }
 
+button {
+    padding: 25px;
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.double{
+    width: 200px;
+}
+
 #calculator{
     display: flex;
     flex-direction: column;
