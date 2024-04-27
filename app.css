@@ -17,7 +17,6 @@ button {
     margin: 1px;
     font-family: monospace;
     font-size: 2em;
-    background-color: gold;
 }
 
 .double{
@@ -28,12 +27,24 @@ button {
     background-color: cadetblue;
 }
 
+.number:active{
+    background-color: rgb(66, 113, 114);
+}
+
 .operation{
     background-color: orange;
 }
 
+.operation:active{
+    background-color: rgb(188, 122, 0);
+}
+
 .action{
     background-color: lightseagreen;
+}
+
+.action:active{
+    background-color: rgb(26, 139, 134);
 }
 
 #calculator{
