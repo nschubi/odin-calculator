@@ -13,11 +13,27 @@ button {
     height: 80px;
     width: 100px;
     border-radius: 5px;
-    margin: 0px;
+    border: none;
+    margin: 1px;
+    font-family: monospace;
+    font-size: 2em;
+    background-color: gold;
 }
 
 .double{
-    width: 204px;
+    width: 206px;
+}
+
+.number{
+    background-color: cadetblue;
+}
+
+.operation{
+    background-color: orange;
+}
+
+.action{
+    background-color: lightseagreen;
 }
 
 #calculator{
@@ -26,5 +42,26 @@ button {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    min-height: 500px;
     width: 75vh;
+    min-width: 436px;
+    padding: 5px 0px;
+    /* for dev purposes */
+    background-color: black;
+}
+
+#display{
+    flex: 1 auto;
+    background-color: #b2b9b7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 5.5em;
+    font-weight: initial;
+    text-shadow: 1.3px 1.3px #383838;
+    margin: 5px;
+    width: 95%;
+    font-family: monospace;
 }
