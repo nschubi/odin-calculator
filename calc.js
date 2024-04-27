@@ -1,8 +1,13 @@
 const display = document.querySelector('#display');
 let displayValue = '0';
 
-const numbers = document.querySelectorAll(".number");
+const btnClear = document.querySelector('#btnClear');
+btnClear.addEventListener('click', () => {
+    displayValue = '0';
+    updateDisplay();
+})
 
+const numbers = document.querySelectorAll(".number");
 numbers.forEach(element =>
     element.addEventListener('click', (e) => {
         if(display.textContent.length < 9){
@@ -19,5 +24,3 @@ numbers.forEach(element =>
 function updateDisplay(){
     display.textContent = displayValue.toString();
 }
-
-console.log(numbers);
