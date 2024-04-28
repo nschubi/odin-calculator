@@ -6,6 +6,7 @@ body{
     display: flex;  
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 button {
@@ -40,11 +41,11 @@ button {
 }
 
 .action{
-    background-color: lightseagreen;
+    background-color: rgb(72, 72, 227);
 }
 
 .action:active{
-    background-color: rgb(26, 139, 134);
+    background-color: rgb(31, 31, 142);
 }
 
 #calculator{
@@ -52,9 +53,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     min-height: 500px;
-    width: 75vh;
     min-width: 436px;
     padding: 5px 0px;
     /* for dev purposes */
