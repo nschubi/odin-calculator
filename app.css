@@ -32,11 +32,11 @@ button {
     background-color: rgb(66, 113, 114);
 }
 
-.operation{
+.operation, .equals{
     background-color: orange;
 }
 
-.operation:active{
+.operation:active, .equals:active{
     background-color: rgb(188, 122, 0);
 }
 

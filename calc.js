@@ -31,28 +31,33 @@ numbers.forEach(element =>
     })
 );
 
-const operators = document.querySelectorAll('.operation');
-operators.forEach(o => o.addEventListener('click', (e) => {
-    let target = e.target.textContent;
-    if(target === '='){
-        firstNumber = operate();
-        displayValue = firstNumber;
+const equals = document.querySelector('.equals');
+equals.addEventListener('click', () => {
+    if(inOperation){
+        secondNumber = Number(displayValue);
+        displayValue = operate();
         inOperation = false;
         resetEingabe = true;
         updateDisplay();
     }else{
-        operator = target;
-        if(inOperation){
-            secondNumber = Number(displayValue);
-            firstNumber = operate();
-            displayValue = firstNumber;
-            updateDisplay();
-            resetEingabe = true;
-        }else{
-            firstNumber = Number(displayValue);
-            inOperation = true;
-            resetEingabe = true;
-        }
+        resetEingabe = true;
+    }
+});
+
+const operators = document.querySelectorAll('.operation');
+operators.forEach(o => o.addEventListener('click', (e) => {
+    let target = e.target.textContent;
+    operator = target;
+    if(inOperation){
+        secondNumber = Number(displayValue);
+        firstNumber = operate();
+        displayValue = firstNumber;
+        resetEingabe = true;
+        updateDisplay();
+    }else{
+        firstNumber = Number(displayValue);
+        inOperation = true;
+        resetEingabe = true;
     }
 }));
 
