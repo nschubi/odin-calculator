@@ -24,11 +24,11 @@ button {
     width: 206px;
 }
 
-.number{
+.number, .dot{
     background-color: cadetblue;
 }
 
-.number:active{
+.number:active, .dot:active{
     background-color: rgb(66, 113, 114);
 }
 

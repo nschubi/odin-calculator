@@ -31,6 +31,20 @@ numbers.forEach(element =>
     })
 );
 
+const dot = document.querySelector('.dot');
+dot.addEventListener('click', () =>{
+    if(display.textContent.length < 9 &&
+         !display.textContent.includes('.')){
+        if(resetEingabe){
+            displayValue = '0.';
+            resetEingabe = false;
+        }else{
+            displayValue = displayValue + '.';
+        }
+        updateDisplay();
+    }
+});
+
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
     if(inOperation){
