@@ -16,6 +16,18 @@ btnClear.addEventListener('click', () => {
     updateDisplay();
 })
 
+const btnDel = document.querySelector('#btnDel');
+btnDel.addEventListener('click', () => {
+    if(displayValue && !resetEingabe){
+        displayValue = displayValue.slice(0, -1);
+        if(!displayValue){
+            displayValue = '0';
+            resetEingabe = true;
+        }
+        updateDisplay();
+    }
+});
+
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(element =>
     element.addEventListener('click', (e) => {
