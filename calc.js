@@ -28,6 +28,14 @@ btnDel.addEventListener('click', () => {
     }
 });
 
+const btnPercentage = document.querySelector('#btnPercentage');
+btnPercentage.addEventListener('click', () => {
+    if(displayValue){
+        displayValue = (Number(displayValue) / 100).toString();
+        updateDisplay();
+    }
+})
+
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(element =>
     element.addEventListener('click', (e) => {
