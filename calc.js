@@ -18,9 +18,9 @@ btnClear.addEventListener('click', () => {
 
 const btnDel = document.querySelector('#btnDel');
 btnDel.addEventListener('click', () => {
-    if(displayValue && !resetEingabe){
+    if (displayValue && !resetEingabe) {
         displayValue = displayValue.slice(0, -1);
-        if(!displayValue){
+        if (!displayValue) {
             displayValue = '0';
             resetEingabe = true;
         }
@@ -30,7 +30,7 @@ btnDel.addEventListener('click', () => {
 
 const btnPercentage = document.querySelector('#btnPercentage');
 btnPercentage.addEventListener('click', () => {
-    if(displayValue){
+    if (displayValue) {
         displayValue = (Number(displayValue) / 100).toString();
         updateDisplay();
     }
@@ -39,26 +39,27 @@ btnPercentage.addEventListener('click', () => {
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(element =>
     element.addEventListener('click', (e) => {
-        if(display.textContent.length < 9){
-            if(resetEingabe){
-                displayValue = e.target.textContent;
-                resetEingabe = false;
-            }else{
+        if (resetEingabe) {
+            displayValue = e.target.textContent;
+            resetEingabe = false;
+        }
+        else {
+            if (display.textContent.length < 9) {
                 displayValue = displayValue + e.target.textContent;
             }
-            updateDisplay();
         }
+        updateDisplay();
     })
 );
 
 const dot = document.querySelector('.dot');
-dot.addEventListener('click', () =>{
-    if(display.textContent.length < 9 &&
-         !display.textContent.includes('.')){
-        if(resetEingabe){
+dot.addEventListener('click', () => {
+    if (display.textContent.length < 9 &&
+        !display.textContent.includes('.')) {
+        if (resetEingabe) {
             displayValue = '0.';
             resetEingabe = false;
-        }else{
+        } else {
             displayValue = displayValue + '.';
         }
         updateDisplay();
@@ -67,13 +68,13 @@ dot.addEventListener('click', () =>{
 
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
-    if(inOperation){
+    if (inOperation) {
         secondNumber = Number(displayValue);
         displayValue = operate();
         inOperation = false;
         resetEingabe = true;
         updateDisplay();
-    }else{
+    } else {
         resetEingabe = true;
     }
 });
@@ -82,37 +83,37 @@ const operators = document.querySelectorAll('.operation');
 operators.forEach(o => o.addEventListener('click', (e) => {
     let target = e.target.textContent;
     operator = target;
-    if(inOperation){
+    if (inOperation) {
         secondNumber = Number(displayValue);
         firstNumber = operate();
         displayValue = firstNumber;
         resetEingabe = true;
         updateDisplay();
-    }else{
+    } else {
         firstNumber = Number(displayValue);
         inOperation = true;
         resetEingabe = true;
     }
 }));
 
-function add(x,y){
+function add(x, y) {
     return x + y;
 }
 
-function subtract(x,y){
+function subtract(x, y) {
     return x - y;
 }
 
-function multiply(x,y){
+function multiply(x, y) {
     return x * y;
 }
 
-function divide(x,y){
+function divide(x, y) {
     return x / y;
 }
 
-function operate(){
-    switch(operator){
+function operate() {
+    switch (operator) {
         case '+': return add(firstNumber, secondNumber);
         case '-': return subtract(firstNumber, secondNumber);
         case '*': return multiply(firstNumber, secondNumber);
@@ -123,6 +124,6 @@ function operate(){
     }
 }
 
-function updateDisplay(){
+function updateDisplay() {
     display.textContent = displayValue.toString();
 }
