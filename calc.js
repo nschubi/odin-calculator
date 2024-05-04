@@ -113,15 +113,28 @@ function divide(x, y) {
 }
 
 function operate() {
+    let result; 
     switch (operator) {
-        case '+': return add(firstNumber, secondNumber);
-        case '-': return subtract(firstNumber, secondNumber);
-        case '*': return multiply(firstNumber, secondNumber);
-        case '/': return divide(firstNumber, secondNumber);
+        case '+': 
+            result = add(firstNumber, secondNumber);
+            break;
+        case '-': 
+            result = subtract(firstNumber, secondNumber);
+            break;
+        case '*': 
+            result = multiply(firstNumber, secondNumber);
+            break;
+        case '/': 
+            result = divide(firstNumber, secondNumber);
+            break;
         default:
             console.log(`The operator ${operator} is unkown.`)
             return firstNumber;
     }
+    if(result.toString().length >= 9){
+        return NaN;
+    }
+    return result;
 }
 
 function updateDisplay() {
